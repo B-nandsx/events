@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+      }
+
+      .form-container {
+        text-align: center;
+        margin: 50px auto;
+        max-width: 300px;
+      }
+
+      /* Estilos para os inputs */
+      .form-input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      /* Estilos para rótulos (labels) */
+      label {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      /* Estilos para o botão de envio */
+      .form-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        As finas caixas brancas abaixo são caixas de texto. Clique na primeira
+        caixa com o mouse e digite seu primeiro nome. Em seguida, clique dentro
+        da segunda caixa e digite seu sobrenome. <br /><br />Quando terminar,
+        clique no botão 'Enviar'.
+      </p>
+    </div>
+
+    <div class="form-container">
+      <h2></h2>
+      <form action="37.html" method="get" onsubmit="passarValores()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" class="form-input" required />
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input
+          type="text"
+          id="sobrenome"
+          name="sobrenome"
+          class="form-input"
+          required
+        />
+
+        <input type="submit" value="Enviar" class="form-button" />
+      </form>
+    </div>
+
+    <script>
+      function passarValores() {
+        var nome = document.getElementById("nome").value;
+        var sobrenome = document.getElementById("sobrenome").value;
+
+        // Adicionar nome e sobrenome como parâmetros de consulta na URL
+        var url =
+          "37.html?nome=" +
+          encodeURIComponent(nome) +
+          "&sobrenome=" +
+          encodeURIComponent(sobrenome);
+        window.location.href = url;
+
+        return false; // Evita o envio padrão do formulário
+      }
+      function passarValores() {
+        var nome = document.getElementById("nome").value;
+        var sobrenome = document.getElementById("sobrenome").value;
+        var url =
+          "/Mousercise/Pastanova2/index.html?nome=" +
+          encodeURIComponent(nome) +
+          "&sobrenome=" +
+          encodeURIComponent(sobrenome);
+        window.location.href = url;
+        return false;
+      }
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg36", contador);
+      }
+    </script>
+  </body>
+</html>

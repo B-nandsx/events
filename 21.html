@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .pa {
+        text-align: center;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        justify-content: center; /* Centraliza os elementos horizontalmente */
+      }
+
+      .fotos2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        justify-content: center; /* Centraliza os elementos horizontalmente */
+      }
+
+      img {
+        width: 200px;
+        height: 150px;
+        cursor: pointer;
+      }
+
+      #continuar {
+        display: none;
+        margin-left: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="pa">
+      <p>
+        <strong>Clique duas vezes</strong> em cada um dos carros abaixo para
+        ativá-los e prossiga para a próxima página.
+      </p>
+    </div>
+    <div class="gallery">
+      <img src="/imagem/ferrari.png" alt="Imagem 1" />
+      <img src="/imagem/alfa romeo.webp" alt="Imagem 2" />
+      <img src="/imagem/haas.webp" alt="Imagem 3" />
+    </div>
+    <div class="fotos2">
+      <img src="/imagem/red bull.png" alt="Imagem 4" />
+      <img src="/imagem/mcloren.jpg" alt="Imagem 5" />
+      <img src="/imagem/Mercedes.jpg" alt="Imagem 6" />
+    </div>
+    <!-- Adicione mais imagens conforme necessário -->
+
+    <!-- Botão Continuar -->
+    <button id="continuar" style="display: none">Continuar</button>
+
+    <script>
+      const imagesGallery = document.querySelectorAll(".gallery img");
+      const imagesFotos2 = document.querySelectorAll(".fotos2 img");
+      const continuarButton = document.getElementById("continuar");
+      function hideImage(image) {
+        image.addEventListener("dblclick", () => {
+          image.style.display = "none";
+
+          const allImagesHidden = [...imagesGallery, ...imagesFotos2].every(
+            (img) => img.style.display === "none"
+          );
+          if (allImagesHidden) {
+            continuarButton.style.display = "block";
+          }
+        });
+      }
+      imagesGallery.forEach((image) => {
+        hideImage(image);
+      });
+      imagesFotos2.forEach((image) => {
+        hideImage(image);
+      });
+
+      continuarButton.addEventListener("click", () => {
+        window.location.href = "/22.html";
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg21", contador);
+      }
+    </script>
+  </body>
+</html>

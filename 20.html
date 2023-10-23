@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mouse</title>
+
+    <style>
+
+.partecima {
+            color: black;
+            background-color: rgb(177, 112, 133);
+        }
+      .continue{
+
+    border-radius: 20%;
+
+    width: 100px;
+
+    height: 30px;
+
+    margin-left: 250px;
+
+    display: none;
+
+}
+body {
+            background-color: rgb(214, 186, 201);
+        }
+img.c1{
+
+    width: 100px;
+
+    height: 100px;
+
+    grid-column: 4;
+
+    grid-row: 1;
+
+}
+
+ 
+
+img.c2{
+
+    width: 100px;
+
+    height: 100px;
+
+    grid-column: 4;
+
+    grid-row: 2;
+
+}
+
+img.c3{
+
+    width: 100px;
+
+    height: 100px;
+
+    grid-column: 4;
+
+    grid-row: 3;
+
+ 
+
+}
+
+ 
+
+ 
+
+.imagens{
+
+    display: grid;
+
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+
+}
+
+img.d1{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 3;
+
+    grid-row: 1;
+
+    display: none;
+
+}
+
+ 
+
+img.d2{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 3;
+
+    grid-row: 2;
+
+    display: none;
+
+}
+
+img.d3{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 3;
+
+    grid-row: 3;
+
+    display: none;
+
+ 
+
+}
+
+img.d4{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 5;
+
+    grid-row: 1;
+
+    display: none;
+
+}
+
+img.d5{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 5;
+
+    grid-row: 2;
+
+    display: none;
+
+}
+
+img.d6{
+
+    width: 50px;
+
+    height: 50px;
+
+    grid-column: 5;
+
+    grid-row: 3;
+
+    display: none;
+
+}
+
+a.continue2{
+
+    border-radius: 20%;
+
+    width: 100px;
+
+    height: 30px;
+
+    display: none;
+
+    grid-column: 4;
+
+    grid-row: 4;
+
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div>
+
+      <div class="partecima"><h1>Mousercise</h1></div>
+
+    </div>
+
+    <p>
+
+      Clique em cada uma das series abaixo para continuar para a próxima página.
+
+    </p>
+
+    <div class="imagens">
+
+      <img class="c1" src="/imagem/IMAG1.jpg" onclick="trocar1()"></button>
+
+      <img class="c2" src="/imagem/IMAG2.jpg" onclick="trocar2()"></button>
+
+      <img class="c3" src="/imagem/IMAG3.jpg" onclick="trocar3()"></button>
+
+     
+
+     
+
+     
+
+      <img class="d1" src="/imagem/checkmark1.png" alt="verify">
+
+      <img class="d2" src="/imagem/checkmark1.png" alt="verify">
+
+      <img class="d3" src="/imagem/checkmark1.png" alt="verify">
+
+     
+
+     
+
+     
+
+      <br><br><br>
+
+      <a class="continue2" href="/21.html"><button class="continue2" onclick="continuar">Continue</button></a>
+
+      </div>
+
+      <script>
+
+     
+
+      var totalBotoes = 3;
+
+      var botoesClicados = 0;
+
+     
+
+      function verificarBotoesClicados() {
+
+          if (botoesClicados === totalBotoes) {
+
+              document.getElementsByClassName('continue2')[0].style.display = 'block';
+
+          }
+
+      }
+
+     
+
+     
+
+      function trocar1(classeBotao) {
+
+          // Oculta todas as imagens
+
+          var imagens = document.querySelectorAll('img.d1');
+
+          imagens.forEach(function(imagem) {
+
+              imagem.style.display = 'block';
+
+          });
+
+          botoesClicados++;
+
+         
+
+          verificarBotoesClicados();
+
+      }
+
+      function trocar2(classeBotao) {
+
+          // Oculta todas as imagens
+
+          var imagens = document.querySelectorAll('img.d2');
+
+          imagens.forEach(function(imagem) {
+
+              imagem.style.display = 'block';
+
+          });
+
+          botoesClicados++;
+
+         
+
+          verificarBotoesClicados();
+
+      }
+
+      function trocar3(classeBotao) {
+
+          // Oculta todas as imagens
+
+          var imagens = document.querySelectorAll('img.d3');
+
+          imagens.forEach(function(imagem) {
+
+              imagem.style.display = 'block';
+
+          });
+
+          botoesClicados++;
+
+         
+
+          verificarBotoesClicados();
+
+      }
+
+     
+
+      </script>
+      <script>
+        let contador = 0;
+        const html = document.querySelector("html");
+        html.addEventListener("click", contarclick);
+        function contarclick() {
+          contador++;
+          localStorage.setItem("contadorpg20", contador);
+        }
+      </script>
+
+  </body>
+
+</html>

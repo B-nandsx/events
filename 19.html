@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+<style>
+    .partecima {
+            color: black;
+            background-color: rgb(177, 112, 133);
+        }
+        body {
+            background-color: rgb(214, 186, 201);
+        }
+      
+    .hidden1,.hidden2,.hidden3,.hidden4,.hidden5,.hidden6,.hidden7,.hidden8,.hidden9,.hidden10,.hidden11 { 
+        display: none;
+
+    }
+    
+</style>
+
+
+
+  </head>
+  <body>
+    <div class="topbar">
+        
+        <h1 class="partecima">Mousercise</h1>
+        <p>Clique em cada um dos botões abaixo para avançar para a próxima página.</p>
+        
+    <table width="80%" >
+
+      <tbody>
+
+          <tr>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn1-up.gif" onclick="trocar1()" >
+
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn2-up.gif"  onclick="trocar2()" >
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn3-up.gif" onclick="trocar3()" >
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn4-up.gif" onclick="trocar4()" >
+
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn5-up.gif"onclick="trocar5()" >
+
+     
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn6-up.gif" onclick="trocar6()" >
+
+       
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn7-up.gif"  onclick="trocar7()">
+
+       
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn8-up.gif" onclick="trocar8()" >
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn9-up.gif"  onclick="trocar9()" >
+
+
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn10-up.gif" onclick="trocar10()">
+
+          
+
+      </td>
+
+      <td align="center" width="50">
+
+          <img src="/imagem/btn11-up.gif"  onclick="trocar11()" >
+
+
+      </td>
+
+     
+
+      <table width="80%">
+
+          <tbody>
+
+              <tr>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark1.png" class="hidden1" >
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark2.png" class="hidden2">
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark3.png" class="hidden3" >
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark4.png" class="hidden4" >
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark5.png" class="hidden5" >
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark6.png" class="hidden6" >
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark7.png" class="hidden7">
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark8.png" class="hidden8">
+
+          </td>
+
+          <td align="center" width="50">
+
+              <img src="/imagem/checkmark9.png" class="hidden9">
+
+          </td>
+          <td align="center" width="50">
+              <img src="/imagem/checkmark10.png" class="hidden10" >
+          </td>
+          <td align="center" width="50">
+              <img src="/imagem/checkmark11.gif" class="hidden11">
+          </td>
+          </tr>
+
+  </table>  
+  <p align="center" >
+    <a href="20.html">
+  <img src="imagem/continue.gif" class="hidden" onclick="trocar()" style="display: none;"/>
+</a>
+  </p>
+  <script>
+var totalBotoes = 11;
+var botoesClicados = 0;
+
+function verificarBotoesClicados() {
+    if (botoesClicados === totalBotoes) {
+        document.getElementsByClassName('hidden')[0].style.display = 'block';
+    }
+}
+
+
+function trocar1(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden1');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar2(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden2');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar3(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden3');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar4(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden4');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar5(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden5');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar6(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden6');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar7(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden7');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar8(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden8');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar9(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden9');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar10(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden10');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+function trocar11(classeBotao) {
+    // Oculta todas as imagens
+    var imagens = document.querySelectorAll('img.hidden11');
+    imagens.forEach(function(imagem) {
+        imagem.style.display = 'block';
+    });
+    botoesClicados++;
+    
+    verificarBotoesClicados();
+}
+  </script>
+  <script>
+    let contador = 0;
+    const html = document.querySelector("html");
+    html.addEventListener("click", contarclick);
+    function contarclick() {
+      contador++;
+      localStorage.setItem("contadorpg19", contador);
+    }
+  </script>
+  </body>
+</html>

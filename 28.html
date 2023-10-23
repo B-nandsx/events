@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Estilo para centralizar o conteúdo */
+
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+
+      /* Estilo para a mensagem de erro */
+
+      .error-message {
+        color: red;
+
+        display: none;
+      }
+
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+
+      /* Estilo para o botão de envio */
+
+      #submit-button {
+        margin-top: 10px;
+      }
+
+      /* Estilo para esconder o link e a imagem do "Continue" */
+
+      #continue-link {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+
+    <div class="checkbox-container">
+      <p>
+        As caixas de seleção permitem selecionar uma ou mais opções de um grupo
+        de opções. <br />Clique dentro de cada uma das caixas de seleção brancas
+        abaixo para continuar.
+      </p>
+
+      <input type="checkbox" id="checkbox1" />
+
+      <label for="checkbox1"> Um</label><br />
+
+      <input type="checkbox" id="checkbox2" />
+
+      <label for="checkbox2"> Dois</label><br />
+
+      <input type="checkbox" id="checkbox3" />
+
+      <label for="checkbox3"> Três</label><br />
+
+      <input type="checkbox" id="checkbox4" />
+
+      <label for="checkbox4"> Quatro</label><br />
+
+      <input type="checkbox" id="checkbox5" />
+
+      <label for="checkbox5"> Cinco</label><br />
+
+      <input type="checkbox" id="checkbox6" />
+
+      <label for="checkbox6"> Seis</label><br />
+
+      <input type="checkbox" id="checkbox7" />
+
+      <label for="checkbox7"> Sete</label><br />
+
+      <input type="checkbox" id="checkbox8" />
+
+      <label for="checkbox8"> Oito</label><br />
+
+      <input type="checkbox" id="checkbox9" />
+
+      <label for="checkbox9"> Nove</label><br />
+
+      <input type="checkbox" id="checkbox10" />
+
+      <label for="checkbox10"> Dez</label><br />
+
+      <p class="error-message">Por favor, marque todas as checkboxes.</p>
+
+      <a href="/29.html" id="continue-link">
+        <img id="botaoContinue" src="/imagem/continue.gif" />
+      </a>
+    </div>
+
+    <script>
+      // Função para verificar se todas as checkboxes estão marcadas
+
+      function checkAllCheckboxes() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        let allChecked = true;
+
+        checkboxes.forEach((checkbox) => {
+          if (!checkbox.checked) {
+            allChecked = false;
+          }
+        });
+
+        return allChecked;
+      }
+
+      // Função para mostrar a mensagem de erro se não estiverem todas marcadas e
+
+      // habilitar/desabilitar o link <a> e a imagem <img> do "Continue"
+
+      function validateCheckboxes() {
+        const errorMessage = document.querySelector(".error-message");
+
+        const continueLink = document.getElementById("continue-link");
+
+        const allChecked = checkAllCheckboxes();
+
+        if (!allChecked) {
+          errorMessage.style.display = "block"; // Mostra a mensagem de erro
+
+          continueLink.style.display = "none"; // Esconde o link
+        } else {
+          errorMessage.style.display = "none"; // Esconde a mensagem de erro
+
+          continueLink.style.display = "block"; // Mostra o link
+        }
+      }
+
+      // Adiciona um ouvinte de eventos para as caixas de seleção
+
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", validateCheckboxes);
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg28", contador);
+      }
+    </script>
+  </body>
+</html>

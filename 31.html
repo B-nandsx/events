@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .texto {
+        text-align: center;
+      }
+
+      img {
+        float: right;
+
+        margin-top: -160px;
+
+        margin-right: 560px;
+
+        height: 200px;
+
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="partecima"><h1>Mousercise</h1></div>
+    <p>
+      Escolha oque você vai assistir nos botões de opção abaixo e clique no
+      botão "Continuar".
+    </p>
+    <p class="texto">
+      <input type="radio" name="personagem" value="satoru" />You
+    </p>
+    <p class="texto">
+      <input type="radio" name="personagem" value="megumi" />Prison Break
+    </p>
+    <p class="texto">
+      <input type="radio" name="personagem" value="nobara" />Lucifer
+    </p>
+    <p class="texto">
+      <input type="radio" name="personagem" value="yuji" />The 100
+    </p>
+    <img src="/imagem/img1.jpg" id="satoru-img" style="display: none" />
+    <img src="/imagem/img2.jpg" id="megumi-img" style="display: none" />
+    <img src="/imagem/img3.jpg" id="nobara-img" style="display: none" />
+    <img src="/imagem/img4.jpg" id="yuji-img" style="display: none" />
+    <a href="/32.html"
+      ><button style="display: none" class="botao">continuar</button></a
+    >
+
+    <script>
+      const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+      radioButtons.forEach((radio) => {
+        radio.addEventListener("change", function () {
+          const selectedValue = this.value;
+
+          document.querySelectorAll("img").forEach((img) => {
+            img.style.display = "none";
+          });
+
+          document.getElementById(selectedValue + "-img").style.display =
+            "block";
+
+          document.getElementsByClassName("botao")[0].style.display = "block";
+        });
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg31", contador);
+      }
+    </script>
+  </body>
+</html>

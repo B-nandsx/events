@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bem-vindo</title>
+  </head>
+  <body>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+    </style>
+    <header class="mouserCise">
+      <div class="partecima"><h1>Mousercise</h1></div>
+    </header>
+
+    <div class="div">
+      <div class="text">Reta final</div>
+      <br />
+      <p>Bem-vindo, <span id="nome"></span> <span id="sobrenome"></span>!</p>
+      <br />
+      Pratique suas habilidades de copiar e colar...
+    </div>
+
+    <hr style="margin-top: 10px; margin-bottom: 10px" />
+
+    <table class="margin">
+      <tbody>
+        <tr>
+          <th width="130" align="left">&nbsp;&nbsp;&nbsp;Respostas:</th>
+          <th colspan="3" align="left">Questões:</th>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;tóquio</td>
+          <td>A: É o maior deserto do mundo.</td>
+          <td>
+            <input type="text" id="input1" />
+            <button onclick="verificarResposta(1, 'saara')">Verificar</button>
+            <p align="center" style="color: green; display: none">
+              Certa resposta
+            </p>
+            <p align="center" style="color: red; display: none">
+              Resposta errada
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;h2o</td>
+          <td>
+            B: É uma linguagem de programação popular para desenvolvimento web.
+          </td>
+          <td>
+            <input type="text" id="input2" />
+            <button onclick="verificarResposta(2, 'python')">Verificar</button>
+            <p align="center" style="color: green; display: none">
+              Certa resposta
+            </p>
+            <p align="center" style="color: red; display: none">
+              Resposta errada
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;python</td>
+          <td>C: É a capital do Japão.</td>
+          <td>
+            <input type="text" id="input3" />
+            <button onclick="verificarResposta(3, 'tóquio')">Verificar</button>
+            <p align="center" style="color: green; display: none">
+              Certa resposta
+            </p>
+            <p align="center" style="color: red; display: none">
+              Resposta errada
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;saara</td>
+          <td>D: É a fórmula química da água</td>
+          <td>
+            <input type="text" id="input4" />
+            <button onclick="verificarResposta(4, 'h2o')">Verificar</button>
+            <p align="center" style="color: green; display: none">
+              Certa resposta
+            </p>
+            <p align="center" style="color: red; display: none">
+              Resposta errada
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="/Redirecionamentofinal/index.html">
+      <button style="margin-top: 500px">Finish round</button>
+    </a>
+
+    <script>
+      function verificarResposta(pergunta, respostaCorreta) {
+        const inputElement = document.getElementById("input" + pergunta);
+        const respostaUsuario = inputElement.value.toLowerCase(); // Converte a resposta do usuário para minúsculas
+
+        if (respostaUsuario === respostaCorreta) {
+          // Resposta correta
+          inputElement.style.backgroundColor = "lightgreen"; // Pode estilizar a caixa de entrada para indicar que a resposta está correta
+          inputElement.disabled = true; // Impede que o usuário altere a resposta
+
+          // Exibe a mensagem "Certa resposta" em verde
+          const mensagemCerta =
+            inputElement.nextElementSibling.nextElementSibling; // Selecione o próximo elemento p após o botão
+          mensagemCerta.style.display = "block";
+
+          // Verifica se todas as respostas estão corretas
+          if (todasRespostasCorretas()) {
+            exibirImagemCerta();
+          }
+        } else {
+          // Resposta incorreta
+          inputElement.style.backgroundColor = "lightcoral"; // Pode estilizar a caixa de entrada para indicar que a resposta está errada
+
+          // Exibe a mensagem "Resposta errada" em vermelho
+          const mensagemErrada =
+            inputElement.nextElementSibling.nextElementSibling
+              .nextElementSibling; // Selecione o segundo próximo elemento p após o botão
+          mensagemErrada.style.display = "block";
+        }
+      }
+
+      function todasRespostasCorretas() {
+        // Verifica se todas as respostas foram corretas
+        for (let i = 1; i <= 5; i++) {
+          const inputElement = document.getElementById("input" + i);
+          if (
+            inputElement.value.toLowerCase() !==
+            inputElement.getAttribute("resposta-correta")
+          ) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function exibirImagemCerta() {
+        // Exibe a imagem correta
+        const imagemCerta = document.getElementById("imagemCerta");
+        imagemCerta.style.display = "block";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        // Recupere o nome e sobrenome da URL
+        const params = new URLSearchParams(window.location.search);
+        const nome = params.get("nome");
+        const sobrenome = params.get("sobrenome");
+
+        // Exiba o nome e sobrenome na página
+        if (nome) {
+          document.getElementById("nome").textContent = nome;
+        }
+        if (sobrenome) {
+          document.getElementById("sobrenome").textContent = sobrenome;
+        }
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg37", contador);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .pg1 {
+        text-align: center;
+      }
+      img {
+        height: 100px;
+        width: 90px;
+        margin-top: 45px;
+      }
+      button {
+        background-color: rgb(132, 179, 211);
+        margin-top: 70px;
+        display: block;
+        margin: 0 auto; /* Centraliza horizontalmente */
+      }
+      .meio {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="pg1">
+      <h1>Bem vindo ao Mousercise!</h1>
+      <img src="imagem/jorge.jpg" alt="jorge" />
+      <p>
+        Este exercício irá ajudá-lo a praticar suas habilidades com o mouse do
+        computador e ensiná-lo a usar os controles básicos da interface do
+        usuário. <br />Clique no botão abaixo para começar.
+      </p>
+    </div>
+    <div>
+      <button name="button"><a href="/1.html">Pratique</a></button>
+    </div>
+    <div class="meio"></div>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg0", contador);
+      }
+    </script>
+  </body>
+</html>

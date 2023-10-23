@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+        text-align: center;
+      }
+
+      /* Estilos para a lista suspensa com barra de rolagem */
+      .custom-select {
+        position: relative;
+        width: 200px; /* Largura desejada para a lista suspensa */
+        overflow: hidden;
+        height: 3.5em; /* Altura máxima da lista suspensa (ajustada para mostrar três opções de cada vez) */
+        margin: 0 auto; /* Centraliza horizontalmente */
+      }
+
+      .custom-select select {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        overflow-y: scroll; /* Habilita a barra de rolagem vertical */
+        max-height: 105px; /* Altura máxima da lista suspensa (ajustada para mostrar três opções de cada vez) */
+      }
+
+      /* Estilos para centralizar o botão "Continuar" */
+      .button-container {
+        text-align: center;
+        margin-top: 20px; /* Espaçamento entre a lista suspensa e o botão */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        A caixa branca abaixo é uma caixa de lista de rolagem. Use a barra de
+        rolagem no lado direito da caixa de listagem para percorrer todas as
+        opções disponíveis. Clique em uma opção para selecioná-la.
+      </p>
+      <br />
+      <p>
+        Selecione um cantor(a) ("Amado Batista") e clique no botão 'Continuar'.
+      </p>
+      <br />
+      <p>O cantor escolhido é:</p>
+    </div>
+
+    <div class="custom-select">
+      <select id="cantorSelect">
+        <option value="opcao1">Taylor Swift</option>
+        <option value="opcao2">The Weeknd</option>
+        <option value="opcao3">Amado Batista</option>
+        <option value="opcao4">Marilia Mendonça</option>
+        <option value="opcao5">Mateus e Kauan</option>
+        <option value="opcao6">Lana Del Rey</option>
+        <option value="opcao7">Mato Grosso e Mathias</option>
+        <option value="opcao8">Harry Styles</option>
+        <option value="opcao9">One Direction</option>
+        <option value="opcao10">Luan Santana</option>
+        <option value="opcao11">Matuê</option>
+        <option value="opcao12">Bruno e Marrone</option>
+        <!-- Adicione mais opções conforme necessário -->
+      </select>
+    </div>
+
+    <div class="button-container">
+      <div id="botaoContinuar" style="display: none">
+        <a href="/35.html">Continuar</a>
+      </div>
+    </div>
+
+    <script>
+      const cantorSelect = document.getElementById("cantorSelect");
+
+      cantorSelect.addEventListener("change", function () {
+        if (cantorSelect.value === "opcao3") {
+          window.location.href = "/35.html"; // Redireciona para a próxima página
+        }
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg34", contador);
+      }
+    </script>
+  </body>
+</html>

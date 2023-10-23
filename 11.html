@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+      }
+
+      .textu {
+        margin-left: 1600px;
+        margin-top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        Impressionante. Mas agora, os números estão ficando menores. Clique no
+        número 11 com muito cuidado!
+      </p>
+    </div>
+    <div class="textu">
+      <div>
+        <a href="/8.html">7 </a>
+        <a href="/8.html">7 </a>
+        <a href="/8.html">7 </a>
+      </div>
+
+      <div>
+        <a href="/8.html">7 </a>
+        <a href="/8.html">7 </a>
+        <a href="/8.html">7 </a>
+      </div>
+
+      <div>
+        <a href="/8.html">7 </a>
+        <a href="/12.html">11 </a>
+        <a href="/8.html">7 </a>
+      </div>
+    </div>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("11", contador);
+      }
+    </script>
+  </body>
+</html>

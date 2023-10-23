@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        As caixas de mensagens são mensagens curtas que o computador coloca na
+        tela para alertá-lo sobre informações importantes ou para fazer
+        perguntas antes de realizar uma tarefa <br />
+
+        <br />Quando uma caixa de mensagem aparecer, você deverá ler a mensagem
+        ou pergunta e responder clicando no botão apropriado na caixa de
+        mensagem. <br />
+
+        <br />
+        Clique no link abaixo para exibir uma caixa de mensagem, leia a mensagem
+        e clique no botão apropriado na caixa. <br />
+      </p>
+    </div>
+    <div>
+      <a href="/23.html" onclick="mudar()"
+        >Clique em mim para exibir uma caixa de mensagem</a
+      >
+    </div>
+
+    <script>
+      function mudar() {
+        if (confirm("Deseja mudar de página?")) {
+          window.location.href = "/23.html";
+        } else {
+          if (confirm("Operação cancelada. Permanecer na página atual?")) {
+            // Permanecer na mesma página (não fazer nada)
+          } else {
+            window.location.href = "/outra-pagina.html"; // Redirecionar para outra página em caso de confirmação adicional.
+          }
+        }
+      }
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg22", contador);
+      }
+    </script>
+  </body>
+</html>

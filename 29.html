@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mousercise</title>
+    <style>
+      /* Adicione seus estilos CSS aqui */
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .semana {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 10px;
+        text-align: center;
+      }
+
+      .semana img {
+        width: 100px;
+        height: 100px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        Selecione uma ou mais opções nas caixas de seleção abaixo e clique no
+        botão ‘Continuar’. <br />
+        <br />
+        Escolha quantas músicas desejar e monte sua playlist.
+      </p>
+    </div>
+    <div class="semana">
+      <form>
+        <input type="checkbox" id="checkbox1" onclick="showImage('after')" />
+        <label for="checkbox1"> After Hours</label>
+        <input type="checkbox" id="checkbox2" onclick="showImage('callout')" />
+        <label for="checkbox2"> Call out my name</label>
+        <input type="checkbox" id="checkbox3" onclick="showImage('mothto')" />
+        <label for="checkbox3"> Moth to a flame</label>
+        <input type="checkbox" id="checkbox4" onclick="showImage('star')" />
+        <label for="checkbox4"> Starboy</label>
+        <input type="checkbox" id="checkbox5" onclick="showImage('outof')" />
+        <label for="checkbox5"> Out of time</label>
+        <input type="checkbox" id="checkbox6" onclick="showImage('hills')" />
+        <label for="checkbox6"> The Hills</label>
+        <input type="checkbox" id="checkbox7" onclick="showImage('lights')" />
+        <label for="checkbox7"> Blinding Lights</label>
+        <button class="pag30" type="button" onclick="verificarSelecao()">
+          Continuar
+        </button>
+      </form>
+      <img class="after" src="imagem/After Hours.jpg" alt="" />
+      <img class="callout" src="imagem/Call out my name.jpg" alt="" />
+      <img class="mothto" src="imagem/Moth to a flame.jpg" alt="" />
+      <img class="star" src="imagem/Starboy.jpg" alt="" />
+      <img class="outof" src="imagem/Out of timew.jpg" alt="" />
+      <img class="hills" src="imagem/The Hills.jpg" alt="" />
+      <img class="lights" src="imagem/Blinding Lights.png" alt="" />
+    </div>
+
+    <script>
+      function mudar() {
+        window.location.href = "/30.html";
+      }
+
+      function showImage(imageClass) {
+        var image = document.querySelector("." + imageClass);
+
+        if (image.style.display === "none" || image.style.display === "") {
+          image.style.display = "inline-block";
+        } else {
+          image.style.display = "none";
+        }
+      }
+
+      function verificarSelecao() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var peloMenosUmSelecionado = false;
+
+        checkboxes.forEach(function (checkbox) {
+          if (checkbox.checked) {
+            peloMenosUmSelecionado = true;
+          }
+        });
+
+        if (peloMenosUmSelecionado) {
+          mudar();
+        } else {
+          alert("Selecione pelo menos uma opção antes de continuar.");
+        }
+      }
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg29", contador);
+      }
+    </script>
+  </body>
+</html>

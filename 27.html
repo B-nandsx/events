@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      header {
+        background-color: #e79eff;
+      }
+      #quadro1 {
+        height: 200px;
+        width: 200px;
+        background-color: #e79eff;
+      }
+      .quadro2 {
+        height: 350px;
+        width: 350px;
+        background-color: aqua;
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <p>
+      “Clicar e arrastar” é uma forma de mover determinados objetos na tela.
+      Para mover um objeto, coloque o cursor do mouse sobre ele, pressione e
+      segure o botão esquerdo do mouse e mova o mouse. Depois de "arrastar" o
+      objeto para o local desejado, solte o botão do mouse.
+    </p>
+    <p>
+      Clique e arraste o quadrado vermelho para que fique dentro do quadrado
+      cinza.
+    </p>
+    <div draggable="true" ondragstart="onDragStart(event);" id="quadro1">
+      oi
+    </div>
+    <div
+      ondrop="onDrop(event);"
+      ondragover="onDragOver(event);"
+      class="quadro2"
+    >
+      aaaa
+    </div>
+    <a href="/28.html"
+      ><img id="botaoContinue" src="/imagem/continue.gif" style="display: none"
+    /></a>
+    <script>
+      function onDragStart(event) {
+        event.dataTransfer.setData("text/plain", event.target.id);
+        event.currentTarget.style.backgroundColor = "red";
+      }
+      function onDragOver(event) {
+        event.preventDefault();
+      }
+      function onDrop(event) {
+        const id = event.dataTransfer.getData("text/plain");
+        const NarutoElement = document.getElementById(id);
+        const Kyubi = event.target;
+        Kyubi.appendChild(NarutoElement);
+        event.dataTransfer.clearData();
+      }
+      function onDrop(event) {
+        const id = event.dataTransfer.getData("text/plain");
+        const NarutoElement = document.getElementById(id);
+        const Kyubi = event.target;
+        if (Kyubi.classList.contains("quadro2")) {
+          Kyubi.appendChild(NarutoElement);
+          event.dataTransfer.clearData();
+          const botaoContinue = document.getElementById("botaoContinue");
+          botaoContinue.style.display = "block";
+        }
+      }
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg27", contador);
+      }
+    </script>
+  </body>
+</html>

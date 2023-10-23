@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+        text-align: center;
+      }
+
+      select {
+        padding: 5px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+
+      .frut {
+        margin-left: 890px;
+      }
+
+      /* Estilo para ocultar o botão inicialmente */
+      #continuar {
+        display: none;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        Selecione "Dois" na caixa de listagem suspensa e clique no botão
+        'Continuar'. <br />
+
+        <br />
+        Selecione uma opção:
+      </p>
+    </div>
+
+    <div class="frut">
+      <label for="numeros">Escolher</label>
+      <select id="numeros">
+        <option value="Um">Um</option>
+        <option value="Dois">Dois</option>
+        <option value="Três">Três</option>
+        <option value="Quatro">Quatro</option>
+        <option value="Cinco">Cinco</option>
+        <option value="Seis">Seis</option>
+        <option value="Sete">Sete</option>
+        <option value="Oito">Oito</option>
+        <option value="Nove">Nove</option>
+      </select>
+      <!-- Botão de continuar que só aparecerá quando "uva" for selecionada -->
+      <button id="continuar" onclick="window.location.href='/34.html'">
+        Continuar
+      </button>
+    </div>
+
+    <script>
+      // Adicionar um ouvinte de eventos de mudança à caixa de lista suspensa
+      const numerosSelect = document.getElementById("numeros");
+      const continuarButton = document.getElementById("continuar");
+
+      numerosSelect.addEventListener("change", function () {
+        if (numerosSelect.value === "Dois") {
+          continuarButton.style.display = "block"; // Mostrar o botão se "uva" for selecionada
+        } else {
+          continuarButton.style.display = "none"; // Ocultar o botão para outras seleções
+        }
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg33", contador);
+      }
+    </script>
+  </body>
+</html>

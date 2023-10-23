@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 500px 250px 500px;
+        grid-template-rows: 100px 100px 100px;
+      }
+
+      .numero {
+        grid-column-start: 1;
+        grid-row-start: 1;
+      }
+
+      .letra {
+        grid-column-start: 1;
+        grid-row-start: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="container">
+      <div class="letra">
+        <p>
+          Clique no número 5 acima. (os números são um pouco menores agora).
+        </p>
+      </div>
+      <div class="numero">
+        <a href="/6.html">5</a>
+      </div>
+    </div>
+
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg5", contador);
+      }
+    </script>
+  </body>
+</html>

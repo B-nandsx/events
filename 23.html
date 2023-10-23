@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .txt {
+        color: black;
+        text-align: center;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <h2>
+        <strong
+          >Bom trabalho! Use a barra de rolagem para chegar ao final desta
+          página.</strong
+        >
+      </h2>
+      <img src="/imagem/sainz.jpg" alt="sainz" />
+    </div>
+    <div class="txt">
+      Clique<a href="/24.html">aqui</a>para continuar para a próxima página.
+    </div>
+
+    <script></script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg23", contador);
+      }
+    </script>
+  </body>
+</html>

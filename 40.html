@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="partecima"><h1>Mousercise</h1></div>
+    <h1>Tabela de resultados</h1>
+
+    <table>
+      <tr>
+        <th>Número do exercício</th>
+        <th>Número de clicks esperados</th>
+        <th>Número de clicks realizados</th>
+        <th>Resultados</th>
+      </tr>
+    </table>
+
+    <script>
+      const gabarito = [
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12, 4, 13, 2, 1,
+        1, 1, 1, 2, 11, 8, 6, 2, 3, 3, 2, 2, 3, 13,
+      ];
+      const table = document.querySelector("table");
+      for (let i = 0; i < 37; i++) {
+        const cliquesrealizados = localStorage.getItem(`contadorpg${i + 1}`);
+        table.innerHTML += `
+        <tr>
+            <td>${i + 1}</td>
+            <td></td>
+            <td>${cliquesrealizados}</td>
+        </tr>
+        `;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="partecima"><h1>Mousercise</h1></div>
+    <p>
+      Os botões de opção permitem escolher apenas uma opção de um grupo de
+      opções.
+    </p>
+    <form>
+      <p><input class="checkbox" type="radio" name="option" />1</p>
+      <p><input class="checkbox" type="radio" name="option" />2</p>
+      <p><input class="checkbox" type="radio" name="option" />3</p>
+      <p><input class="checkbox" type="radio" name="option" />4</p>
+      <p><input class="checkbox" type="radio" name="option" />5</p>
+    </form>
+    <div class="Botao" id="continueButton" style="display: none">
+      <a href="/31.html"><img src="/imagem/continue.gif" alt="" /></a>
+    </div>
+    <script>
+      const checkboxes = document.querySelectorAll(".checkbox");
+      const continueButton = document.getElementById("continueButton");
+
+      function checkIfAllChecked() {
+        const allChecked = [...checkboxes].some((radio) => radio.checked);
+        if (allChecked) {
+          continueButton.style.display = "block";
+        } else {
+          continueButton.style.display = "none";
+        }
+      }
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", checkIfAllChecked);
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg30", contador);
+      }
+    </script>
+  </body>
+</html>

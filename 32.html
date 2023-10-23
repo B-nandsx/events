@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+        text-align: center;
+      }
+
+      select {
+        padding: 5px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+
+      .frut {
+        margin-left: 890px;
+      }
+
+      /* Estilo para ocultar o botão inicialmente */
+      #continuar {
+        display: none;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div class="text">
+      <p>
+        A pequena caixa branca abaixo é uma caixa de lista suspensa. Clique na
+        seta triangular preta à direita para abrir a lista de opções e, a
+        seguir, clique na opção desejada. <br />
+
+        <br />Selecione a fruta desejada ("uva") na caixa de listagem suspensa e
+        clique no botão 'Continuar'. <br />
+        <br />A fruta desejada é:
+      </p>
+    </div>
+
+    <div class="frut">
+      <label for="frutas">Escolha uma fruta:</label>
+      <select id="frutas">
+        <option value="maca">Maçã</option>
+        <option value="banana">Banana</option>
+        <option value="laranja">Laranja</option>
+        <option value="uva">Uva</option>
+        <option value="morango">Morango</option>
+      </select>
+      <!-- Botão de continuar que só aparecerá quando "uva" for selecionada -->
+      <button id="continuar" onclick="window.location.href='/33.html'">
+        Continuar
+      </button>
+    </div>
+
+    <script>
+      // Adicionar um ouvinte de eventos de mudança à caixa de lista suspensa
+      const frutasSelect = document.getElementById("frutas");
+      const continuarButton = document.getElementById("continuar");
+
+      frutasSelect.addEventListener("change", function () {
+        if (frutasSelect.value === "uva") {
+          continuarButton.style.display = "block"; // Mostrar o botão se "uva" for selecionada
+        } else {
+          continuarButton.style.display = "none"; // Ocultar o botão para outras seleções
+        }
+      });
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg32", contador);
+      }
+    </script>
+  </body>
+</html>

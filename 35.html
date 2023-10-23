@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .partecima {
+        color: black;
+        background-color: rgb(177, 112, 133);
+      }
+      body {
+        background-color: rgb(214, 186, 201);
+      }
+      .text {
+        color: black;
+        text-align: center;
+      }
+
+      .custom-select {
+        position: relative;
+        width: 200px; /* Largura desejada para a lista suspensa */
+        overflow: hidden;
+        height: 3.5em; /* Altura máxima da lista suspensa (ajustada para mostrar três opções de cada vez) */
+      }
+
+      .custom-select select {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        overflow-y: scroll; /* Habilita a barra de rolagem vertical */
+        max-height: 105px; /* Altura máxima da lista suspensa (ajustada para mostrar três opções de cada vez) */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="partecima">Mousercise</h1>
+    <div id="34" class="invi">
+      <p style="text-align: center">
+        A caixa branca abaixo é uma scroll list. Use a scroll bar no lado
+        direito da list box através das opções disponíveis. Clique na opção e
+        selecione-a.
+      </p>
+      <p style="text-align: center">
+        Selecione o mês de aniversário de The Weeknd (Fevereiro), então
+        continue.
+      </p>
+      <select
+        style="display: block; margin-left: auto; margin-right: auto"
+        name="select3"
+        id="s3"
+        multiple
+        size="4"
+        onchange="validation3()"
+      >
+        <option value="jan">Janeiro</option>
+        <option value="fev">Fevereiro</option>
+        <option value="mar">Março</option>
+        <option value="abr">Abril</option>
+        <option value="mai">Maio</option>
+        <option value="jun">Junho</option>
+        <option value="jul">Julho</option>
+        <option value="ago">Agosto</option>
+        <option value="set">Setembro</option>
+        <option value="out">Outubro</option>
+        <option value="nov">Novembro</option>
+        <option value="dez">Dezembro</option>
+      </select>
+      <p>
+        <a
+          href="/36.html"
+          id="finalbutton34"
+          class="invi"
+          onclick="redirecionar()"
+        >
+          <img
+            src="http://mnl.mclinc.org/wp-content/uploads/ComputerLab/Mousercise2.0/images/continue.gif"
+            alt="botao"
+          />
+        </a>
+      </p>
+    </div>
+
+    <div id="botaoContinuar" style="display: none">
+      <a href="/36.html">Continuar</a>
+    </div>
+
+    <script>
+      function validation3() {
+        const selectedOption = document.getElementById("s3").value;
+        const finalButton = document.getElementById("finalbutton34");
+
+        if (selectedOption === "fev") {
+          finalButton.setAttribute("class", "visivel");
+        } else {
+          finalButton.setAttribute("class", "invi");
+        }
+      }
+
+      function prox34() {
+        document.getElementById("34").setAttribute("class", "invi");
+        document.getElementById("35").setAttribute("class", "visivel");
+      }
+
+      function redirecionar() {
+        const selectedOption = document.getElementById("s3").value;
+        if (selectedOption !== "fev") {
+          alert("Por favor, selecione Fevereiro para continuar.");
+        } else {
+          window.location.href = "/36.html";
+        }
+      }
+    </script>
+    <script>
+      let contador = 0;
+      const html = document.querySelector("html");
+      html.addEventListener("click", contarclick);
+      function contarclick() {
+        contador++;
+        localStorage.setItem("contadorpg35", contador);
+      }
+    </script>
+  </body>
+</html>
